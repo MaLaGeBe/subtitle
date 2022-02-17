@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: 文章副标题
-Version: 1.0
+Version: 1.0.1
 Plugin URL: https://www.emlog.net/plugin/detail/440
 Description: 为你的emlog文章添加一个副标题
 Author: MaLaGeBe
@@ -15,7 +15,7 @@ addAction('save_log', 'save_subtitle');
 function hook_subtitle()
 {
     global $subtitle;
-    echo "<script>var html='<div class=\"mt-2\"><input type=\"text\" name=\"subtitle\" id=\"subtitle\" value=\"{$subtitle}\" class=\"form-control\" placeholder=\"文章副标题\"></div>';$('#post_bar').before(html);</script>";
+    echo "<script>$(document).ready(function(){var html='<div class=\"mt-2\"><input type=\"text\" name=\"subtitle\" id=\"subtitle\" value=\"{$subtitle}\" class=\"form-control\" placeholder=\"文章副标题\"></div>';$('#post_bar').before(html);})</script>";
 }
 
 function save_subtitle($blogid)
